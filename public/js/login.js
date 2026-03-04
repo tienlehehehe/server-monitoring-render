@@ -26,7 +26,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
       alert("✅ Đăng nhập thành công");
 
       // Điều hướng theo quyền
-      if (data.isAdmin) {
+      if (data.IsAdmin) {
         window.location.href = "/admin.html";
       } else {
         window.location.href = "/index.html";
