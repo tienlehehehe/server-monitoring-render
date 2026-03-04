@@ -3,7 +3,8 @@ const os = require('os');
 const path = require('path');
 const si = require('systeminformation');
 const Database = require('./Database');
-const db = new Database("postgres://postgres:toiBODOI456@db.jofmvzebcrrbqbwbixvn.supabase.co:5432/postgres");
+//const db = new Database("postgres://postgres:toiBODOI456@db.jofmvzebcrrbqbwbixvn.supabase.co:5432/postgres");
+const db = new Database(process.env.DATABASE_URL);
 
 const app = express();
 
