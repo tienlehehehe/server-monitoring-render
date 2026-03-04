@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết hệ thống</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+  <h1>Hệ thống giám sát Server</h1>
+  <nav>
+    <ul class="nav-left">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="detail.html">Trang chi tiết</a></li>
+      <li><a href="alerts.html">Trang cảnh báo</a></li>
+      <li><a href="admin.html">Trang quản trị</a></li>
+    </ul>
+    <ul class="nav-right">
+      <li id="username">👤 Tài khoản: </li>
+      <li><button id="logoutBtn">Đăng xuất</button></li>
+    </ul>
+  </nav>
+</header>
+
+  <div class="container">
+    <div class="card">
+      <h3>Lịch sử CPU</h3>
+      <canvas id="cpuHistoryChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Lịch sử RAM</h3>
+      <canvas id="ramHistoryChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Lịch sử Disk</h3>
+      <canvas id="diskHistoryChart"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Lịch sử Network</h3>
+      <canvas id="netHistoryChart"></canvas>
+    </div>
+  </div>
+
+<div id="detailModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modalTitle">Biểu đồ chi tiết</h2>
+
+    <div class="modal-body">
+     <!-- Cột trái: bộ lọc -->
+<div class="filters">
+  <h4>Bộ lọc thời gian</h4>
+  
+  <label for="dateInput">Chọn ngày:</label>
+  <input type="text" id="dateInput" list="dateSuggestions" placeholder="Nhập ngày (dd/mm/yyyy)">
+  <datalist id="dateSuggestions"></datalist>
+
+  <label for="startHour">Từ giờ:</label>
+  <input type="time" id="startHour">
+
+  <label for="endHour">Đến giờ:</label>
+  <input type="time" id="endHour">
+
+  <button onclick="applyFilters()">Áp dụng</button>
+</div>
+
+      <!-- Cột phải: biểu đồ -->
+      <div class="chart-area">
+        <canvas id="modalChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer>
+  &copy; 2026 - Website giám sát server demo
+  <nav class="footer-nav">
+    <a href="index.html">Trang chủ</a> |
+    <a href="detail.html">Chi tiết</a> |
+    <a href="alerts.html">Cảnh báo</a> |
+    <a href="admin.html" id="adminLinkFooter">Quản trị</a>
+  </nav>
+</footer>
+
+  <script src="js/detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .login-container h2 { text-align: center; margin-bottom: 20px; }
+    .login-container label { display: block; margin: 10px 0 5px; font-weight: 500; }
+    .login-container input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+    .login-container button { margin-top: 15px; width: 100%; padding: 10px; background: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+    .login-container button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Đăng nhập</h2>
+    <form id="loginForm">
+      <label for="name">Tên</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <button type="submit">Đăng nhập</button>
+    </form>
+  </div>
+
+  <!-- Gọi file login.js -->
+  <script src="js/login.js"></script>
+</body>
+</html>

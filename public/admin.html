@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang quản trị</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Hệ thống giám sát Server</h1>
+    <nav>
+      <ul class="nav-left">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="detail.html">Trang chi tiết</a></li>
+        <li><a href="alerts.html">Trang cảnh báo</a></li>
+        <li><a href="admin.html">Trang quản trị</a></li>
+      </ul>
+      <ul class="nav-right">
+        <li id="username">👤 Tài khoản: </li>
+        <li><button id="logoutBtn">Đăng xuất</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container grid">
+    <!-- Cấu hình ngưỡng cảnh báo -->
+    <div class="card">
+      <h3>Cấu hình ngưỡng cảnh báo</h3>
+      <form id="thresholdForm" class="form-grid">
+        <label for="cpuThreshold">CPU (%)</label>
+        <input type="number" id="cpuThreshold" name="cpuThreshold" value="80" autocomplete="off">
+
+        <label for="ramThreshold">RAM (%)</label>
+        <input type="number" id="ramThreshold" name="ramThreshold" value="80" autocomplete="off">
+
+        <label for="diskThreshold">Disk (%)</label>
+        <input type="number" id="diskThreshold" name="diskThreshold" value="90" autocomplete="off">
+
+        <button type="submit">Lưu</button>
+      </form>
+    </div>
+
+    <!-- Quản lý người dùng -->
+    <div class="card">
+      <div class="card-header">
+        <h3>Quản lý người dùng</h3>
+        <button id="addUserBtn">+ Thêm</button>
+      </div>
+
+      <!-- Form thêm user ẩn, chỉ hiện khi bấm nút -->
+      <form id="userForm" class="form-grid" style="display:none;">
+        <label for="userNameInput">Tên</label>
+        <input type="text" id="userNameInput" name="userName" autocomplete="name">
+
+        <label for="userEmail">Email</label>
+        <input type="email" id="userEmail" name="userEmail" autocomplete="email">
+
+        <button type="submit">Lưu</button>
+      </form>
+
+      <div id="userList"></div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 - Website giám sát server demo
+    <nav class="footer-nav">
+      <a href="index.html">Trang chủ</a> |
+      <a href="detail.html">Chi tiết</a> |
+      <a href="alerts.html">Cảnh báo</a> |
+      <a href="admin.html">Quản trị</a>
+    </nav>
+  </footer>
+
+  <!-- Modal chỉnh sửa user -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeEditModal()">&times;</span>
+      <h3>Chỉnh sửa người dùng</h3>
+      <form id="editForm" class="form-grid">
+        <label for="editName">Tên</label>
+        <input type="text" id="editName" name="editName" autocomplete="name">
+
+        <label for="editEmail">Email</label>
+        <input type="email" id="editEmail" name="editEmail" autocomplete="email">
+
+        <button type="submit">Cập nhật</button>
+        <button type="button" onclick="closeEditModal()">Hủy</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

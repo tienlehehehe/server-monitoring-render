@@ -1,0 +1,19 @@
+{
+  "name": "website_for_server_monitoring_and_alerting_system",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mssql": "^12.2.0",
+    "pg": "^8.19.0",
+    "systeminformation": "^5.31.1"
+  }
+}
